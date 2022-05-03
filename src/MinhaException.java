@@ -3,7 +3,7 @@ public class MinhaException extends Exception {
     private String mensagem;
 
     public MinhaException(String mensagem) {
-        this.mensagem = mensagem;
+        super(mensagem);
     }
 
     @Override

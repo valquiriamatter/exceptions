@@ -1,3 +1,8 @@
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+
 public class AprendendoExceptions {
 
     public static void main(String[] args) {
@@ -32,6 +37,7 @@ public class AprendendoExceptions {
         //Usando Minha Exception Personalizada
         try{
             System.out.println("Começando o bloco");
+            //Jogando a exception e passando a mensagem
             throw new MinhaException("Meu erro...");
         } catch (MinhaException e) {
             e.printStackTrace();
@@ -107,6 +113,18 @@ public class AprendendoExceptions {
     //Exemplo de Método com Throw e Throws
     void metodoThrowEThrows() throws ArithmeticException{
         throw new ArithmeticException("Incorrect");
+    }
+
+    class AcessoArquivo{
+
+        //Exemplo de inicialização que pode ocorrer exception
+        InputStream is = new FileInputStream("a.txt");
+
+        //Nesse caso o throws vai na assinatura do construtor, caso contrário não compila
+        AcessoArquivo() throws FileNotFoundException {
+
+        }
+
     }
 
 
